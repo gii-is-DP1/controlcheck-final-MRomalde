@@ -57,8 +57,20 @@ INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (11, 'Freddy', '201
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (12, 'Lucky', '2010-06-24', 2, 10);
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (13, 'Sly', '2012-06-08', 1, 10);
 
+INSERT INTO care(id,name,description) VALUES (1,'Hair brushing', 'We will brush the hair of your pet.');
+INSERT INTO care(id,name,description) VALUES (2,'Chemical flea removal', 'We will apply strong chemical products in the hair of your pet to remove any kind of flea or insect present.');
+
+INSERT INTO care_pet_type(fk_care,fk_pet) VALUES (1,2);
+INSERT INTO care_pet_type(fk_care,fk_pet) VALUES (1,1);
+INSERT INTO care_pet_type(fk_care,fk_pet) VALUES (2,2);
+INSERT INTO care_pet_type(fk_care,fk_pet) VALUES (2,1);
+
+INSERT INTO incompatible_care(fk_care1, fk_care2) VALUES (1,2);
+
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (4, 7, '2013-01-04', 'spayed');
 
+INSERT INTO care_provision(id,duration,visit_id,care_id) VALUES (1,0.5,1,2);
+INSERT INTO care_provision(id,duration,visit_id,care_id) VALUES (2,0.25,2,1);
